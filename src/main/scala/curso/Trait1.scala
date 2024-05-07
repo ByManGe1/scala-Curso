@@ -9,7 +9,12 @@ trait Trait1
   }
 }
 
-class Persona extends Trait1
+trait Trait2
+{
+  def Imprimir2(): Unit
+}
+
+class Persona extends Trait1 with Trait2
 {
   def Imprimir (nombre:String): Unit = {
     println(nombre.toUpperCase)
@@ -17,6 +22,10 @@ class Persona extends Trait1
 
    override def Imprimir1: Unit = {
     println("Estoy en la clase")
+  }
+
+  def Imprimir2(): Unit = {
+    println("Estoy en el trait2")
   }
 }
 
@@ -27,5 +36,6 @@ object  Principal {
     persona1.Imprimir1
     persona1.edad = 20
     println(persona1.edad)
+    println(persona1.Imprimir2())
   }
 }
